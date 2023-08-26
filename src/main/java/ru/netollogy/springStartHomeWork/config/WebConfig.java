@@ -8,7 +8,6 @@ import ru.netollogy.springStartHomeWork.service.ProductionProfile;
 import ru.netollogy.springStartHomeWork.service.SystemProfile;
 
 @Configuration
-//@ConfigurationProperties("netology.profile")
 public class WebConfig {
 
     @Bean
@@ -18,7 +17,7 @@ public class WebConfig {
     }
 
     @Bean
-    @ConditionalOnProperty(prefix = "netology.profile", name = "dev")
+    @ConditionalOnProperty(prefix = "netology.profile", name = "dev", havingValue = "false")
     public SystemProfile prodProfile() {
         return new ProductionProfile();
     }
