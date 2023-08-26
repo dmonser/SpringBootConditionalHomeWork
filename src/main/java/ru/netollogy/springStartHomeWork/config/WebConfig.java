@@ -16,6 +16,7 @@ public class WebConfig {
         return new DevProfile();
     }
 
+
     @Bean
     @ConditionalOnProperty(prefix = "netology.profile", name = "dev", havingValue = "false")
     public SystemProfile prodProfile() {
